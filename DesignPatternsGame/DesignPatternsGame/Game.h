@@ -9,6 +9,8 @@ namespace Games
 		virtual ~Game(){};
 
 		//methods
+		virtual void init(int a[8][8], bool gametype);
+		virtual bool move(int a[8][8], int i, int j, int player);
 	};
 }
 
