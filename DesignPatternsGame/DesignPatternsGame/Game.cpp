@@ -23,6 +23,6 @@ namespace Games
 
 	bool Game::move(int a[8][8], int i, int j, int player)
 	{
-
+		return true;
 	}
 }

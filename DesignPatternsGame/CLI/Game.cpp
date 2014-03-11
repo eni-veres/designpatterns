@@ -28,8 +28,8 @@ namespace GameCLI
 		
 	}
 
-	bool CallMove(array<int,2>^% board, int i, int j, int player)
+	bool Game::CallMove(array<int,2>^% board, int i, int j, int player)
 	{
-
+		return true;
 	}
 }
