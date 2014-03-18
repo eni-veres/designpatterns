@@ -23,13 +23,41 @@ namespace GameCLI
 		}
 	}
 
-	void Game::CallInit(array<int,2>^% board)
+	void Game::CallInit(array<int,2>^% board, bool gametype,int stplayer)
 	{
-		
+		std::vector<std::vector<int>> a;
+		gPtr->init(a, gametype, stplayer);
+
+		for(size_t i=0;i<8;i++)
+		{
+			for(size_t j=0;j<8;j++)
+			{
+				board[i,j]=a[i][j];
+			}
+		}
 	}
 
-	bool Game::CallMove(array<int,2>^% board, int i, int j, int player)
+	int Game::CallMove(array<int,2>^% board, int i, int j, int player)
 	{
-		return true;
+		//????
+		std::vector<std::vector<int>> a;
+		a.resize(8,std::vector<int>(8));
+		for(size_t k=0;k<8;k++)
+			for(size_t l=0;l<8;l++)
+			{
+				a[k][l]=board[k,l];
+			}
+		//????
+
+		int rez=gPtr->move(a, i,j,player);
+
+		for(size_t k=0;k<8;k++)
+		{
+			for(size_t l=0;l<8;l++)
+			{
+				board[k,l]=a[k][l];
+			}
+		}
+		return rez;
 	}
 }

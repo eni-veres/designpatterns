@@ -11,18 +11,39 @@ namespace Games
 		return static_cast<IGame*>(new Game);
 	}
 
-	void DestroyGameClass(IGame* testPtr)
+	void DestroyGameClass(IGame* gPtr)
 	{
-		delete testPtr;
+		delete gPtr;
 	}
 
-	void Game::init(int a[8][8], bool gametype) //gametype if player-player or player-computer
+	void Game::init(std::vector<std::vector<int>>& board, bool gametype, int stplayer) 
 	{
-
+		type=gametype;
+		if(type)
+		{
+			//call init method from GamePP
+		}
+		else
+		{
+			//call init method from GamePC
+			GamePC* g=GamePC::getInstance();
+			g->init(board,stplayer);
+		}
 	}
 
-	bool Game::move(int a[8][8], int i, int j, int player)
+	int Game::move(std::vector<std::vector<int>>& board, int i, int j, int player)
 	{
-		return true;
+		int rez=-1;
+		if(type)
+		{
+			//call move from GamePP
+		}
+		else
+		{
+			///call move from GamePC
+			GamePC* g=GamePC::getInstance();
+			rez=g->move(board,i,j,player);
+		}
+		return rez;
 	}
 }
