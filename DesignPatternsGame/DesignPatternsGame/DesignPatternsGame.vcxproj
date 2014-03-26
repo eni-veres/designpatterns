@@ -68,10 +68,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GamePC.cpp" />
+    <ClCompile Include="GamePP.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GamePC.h" />
+    <ClInclude Include="GamePP.h" />
     <ClInclude Include="IGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

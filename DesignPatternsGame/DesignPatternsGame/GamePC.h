@@ -5,6 +5,7 @@
 class GamePC
 {
 	static GamePC* instance;
+	int pl;
 	GamePC(void);
 public:
 	static GamePC* getInstance();

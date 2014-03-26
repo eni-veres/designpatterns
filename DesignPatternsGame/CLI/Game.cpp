@@ -28,6 +28,7 @@ namespace GameCLI
 		std::vector<std::vector<int>> a;
 		gPtr->init(a, gametype, stplayer);
 
+		board=gcnew array<int,2>(8,8);
 		for(size_t i=0;i<8;i++)
 		{
 			for(size_t j=0;j<8;j++)
