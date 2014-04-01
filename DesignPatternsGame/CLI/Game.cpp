@@ -38,7 +38,7 @@ namespace GameCLI
 		}
 	}
 
-	int Game::CallMove(array<int,2>^% board, int i, int j, int player)
+	int Game::CallMove(array<int,2>^% board, int i, int j, int% player)
 	{
 		//????
 		std::vector<std::vector<int>> a;
@@ -49,9 +49,10 @@ namespace GameCLI
 				a[k][l]=board[k,l];
 			}
 		//????
-
-		int rez=gPtr->move(a, i,j,player);
-
+		int val=player;
+		int rez=gPtr->move(a, i,j,val);
+		player=val;
+		
 		for(size_t k=0;k<8;k++)
 		{
 			for(size_t l=0;l<8;l++)

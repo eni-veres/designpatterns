@@ -31,7 +31,7 @@ namespace Games
 		}
 	}
 
-	int Game::move(std::vector<std::vector<int>>& board, int i, int j, int player)
+	int Game::move(std::vector<std::vector<int>>& board, int i, int j, int& player)
 	{
 		int rez=-1;
 		if(type)

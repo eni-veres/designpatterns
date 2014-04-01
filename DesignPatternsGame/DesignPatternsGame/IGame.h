@@ -10,7 +10,7 @@ namespace Games
 
 		//virtual methods
 		virtual void init(std::vector<std::vector<int>>& board, bool gametype, int stplayer)=0;
-		virtual int move(std::vector<std::vector<int>>& board, int i, int j, int player)=0;
+		virtual int move(std::vector<std::vector<int>>& board, int i, int j, int& player)=0;
 	};
 
 	TEST_API IGame* CreateGameClass();
