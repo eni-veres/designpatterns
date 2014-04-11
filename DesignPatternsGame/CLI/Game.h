@@ -11,9 +11,11 @@ namespace GameCLI
 		~Game(void);
 		!Game(void);
 
-		void CallInit(array<int,2>^% board, bool gametype,int stplayer);
-		int CallMove(array<int,2>^% board, int i, int j, int% player);
+		void CallInit(array<int,2>^% board, bool gametype);//,int stplayer);
+		int CallMove(array<int,2>^% board, int i, int j);//, int% player);
 		int CallActivePlayer();
+		int CallGetScore(int player);
+		int CallComputerMove();
 	};
 }
 

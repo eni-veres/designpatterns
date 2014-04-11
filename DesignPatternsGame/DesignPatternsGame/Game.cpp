@@ -16,7 +16,7 @@ namespace Games
 		delete gPtr;
 	}
 
-	void Game::init(std::vector<std::vector<int>>& board, bool gametype, int stplayer) 
+	void Game::init(std::vector<std::vector<int>>& board, bool gametype)//, int stplayer) 
 	{
 		type=gametype;
 		if(type)
@@ -27,11 +27,11 @@ namespace Games
 		{
 			//call init method from GamePC
 			GamePC* g=GamePC::getInstance();
-			g->init(board,stplayer);
+			g->init(board);//,stplayer);
 		}
 	}
 
-	int Game::move(std::vector<std::vector<int>>& board, int i, int j, int& player)
+	int Game::move(std::vector<std::vector<int>>& board, int i, int j)//, int& player)
 	{
 		int rez=-1;
 		if(type)
@@ -42,7 +42,7 @@ namespace Games
 		{
 			///call move from GamePC
 			GamePC* g=GamePC::getInstance();
-			rez=g->move(board,i,j,player);
+			rez=g->move(board,i,j);//,player);
 		}
 		return rez;
 	}
@@ -58,5 +58,29 @@ namespace Games
 			GamePC* g=GamePC::getInstance();
 			return g->getPlayer();
 		}
+	}
+
+	int Game::getScore(int player)
+	{
+		if(type)
+		{
+			//from GamePP
+		}
+		else
+		{
+			GamePC* g=GamePC::getInstance();
+			return g->getScore(player);
+		}
+	}
+	
+	int Game::computerMove()
+	{
+		if(!type)
+		{
+			GamePC* g=GamePC::getInstance();
+			return g->computerMove();
+		}
+		else
+			throw std::exception("Single player mode!");
 	}
 }

@@ -6,7 +6,7 @@ namespace Player
 	{
 	}
 
-	bool ComputerPlayer::move(int i, int j)
+	bool ComputerPlayer::move()
 	{
 		ReversiBoard* board=ReversiBoard::getBoardInstance();
 		int x = negamax(BLACK, 3);
@@ -23,7 +23,7 @@ namespace Player
 		return false;
 	}
 
-	int ComputerPlayer::negamax(int player, int depth) //??check??
+	int ComputerPlayer::negamax(int player, int depth) 
 	{
 		ReversiBoard* board=ReversiBoard::getBoardInstance();
 		int alpha = -65;
@@ -51,7 +51,7 @@ namespace Player
 
 	}
 
-	int ComputerPlayer::negamax_aux(int player, int depth, int alpha, int beta) //??check??
+	int ComputerPlayer::negamax_aux(int player, int depth, int alpha, int beta)
 	{
 		ReversiBoard* board=ReversiBoard::getBoardInstance();
 		if(depth == 0) 

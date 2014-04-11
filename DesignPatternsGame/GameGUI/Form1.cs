@@ -23,21 +23,8 @@ namespace GameGUI
             g = new Game();
             Inceput();
             player = 1;
-            //IncarcareButoane();
-
-
-            //for (int i = 0; i < 8; i++)
-            //    for (int j = 0; j < 8; j++)
-            //    {
-            //        a[i, j] = 0;
-            //        if (((i == 3) && (j == 3)) || ((i == 4) && (j == 4)))
-            //            a[i, j] = 1;
-            //        if (((i == 3) && (j == 4)) || ((i == 4) && (j == 3)))
-            //            a[i, j] = 2;
-
-            //    }
-
         }
+
         public void Inceput()
         {
             int p = 100;
@@ -162,7 +149,7 @@ namespace GameGUI
                     int n = i * 8 + j;
                     if (((Button)apasat).Name == (i * 8 + j).ToString())
                     {
-                        g.CallMove(ref a, i, j, ref player);
+                        g.CallMove(ref a, i, j);
                         changeButtons();
                     }
                 }
@@ -207,7 +194,7 @@ namespace GameGUI
 
             if (((Button)apasat).Name == "1")
             {
-                g.CallInit(ref a, false, player);
+                g.CallInit(ref a, false);
                 IncarcareButoane();
                 //WhoBegins();
             }

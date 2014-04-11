@@ -15,16 +15,17 @@ class GamePC
 	int win;
 	Player::ComputerPlayer cplayer;
 	Player::HumanPlayer hplayer;
-	//int pl;
 	GamePC(void);
 	bool IsGameOver();
 	void SwitchTurn();
 public:
 	static GamePC* getInstance();
-	void init(std::vector<std::vector<int>>& board, int stplayer);
-	int move(std::vector<std::vector<int>>& board, int i, int j, int& player);
+	void init(std::vector<std::vector<int>>& board);
+	int move(std::vector<std::vector<int>>& board, int i, int j);
 	int getPlayer();
 	int GetWinner();
+	int computerMove();
+	int getScore(int player);
 	~GamePC(void);
 };
 

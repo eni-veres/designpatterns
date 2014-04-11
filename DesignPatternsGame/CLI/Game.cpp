@@ -23,10 +23,10 @@ namespace GameCLI
 		}
 	}
 
-	void Game::CallInit(array<int,2>^% board, bool gametype,int stplayer)
+	void Game::CallInit(array<int,2>^% board, bool gametype)//,int stplayer)
 	{
 		std::vector<std::vector<int>> a;
-		gPtr->init(a, gametype, stplayer);
+		gPtr->init(a, gametype);//, stplayer);
 
 		//board=gcnew array<int,2>(8,8);
 		for(size_t i=0;i<8;i++)
@@ -38,11 +38,11 @@ namespace GameCLI
 		}
 	}
 
-	int Game::CallMove(array<int,2>^% board, int i, int j, int% player)
+	int Game::CallMove(array<int,2>^% board, int i, int j)//, int% player)
 	{
 		std::vector<std::vector<int>> a;	
-		pin_ptr<int> ptr=&player;
-		int rez=gPtr->move(a, i,j,*ptr);
+		//pin_ptr<int> ptr=&player;
+		int rez=gPtr->move(a, i,j);//,*ptr);
 		
 		for(size_t k=0;k<8;k++)
 		{
@@ -57,5 +57,15 @@ namespace GameCLI
 	int Game::CallActivePlayer()
 	{
 		return gPtr->getActivePlayer();
+	}
+
+	int Game::CallGetScore(int player)
+	{
+		return gPtr->getScore(player);
+	}
+
+	int Game::CallComputerMove()
+	{
+		return gPtr->computerMove();
 	}
 }
