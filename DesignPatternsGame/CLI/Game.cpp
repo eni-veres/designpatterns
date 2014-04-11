@@ -28,7 +28,7 @@ namespace GameCLI
 		std::vector<std::vector<int>> a;
 		gPtr->init(a, gametype, stplayer);
 
-		board=gcnew array<int,2>(8,8);
+		//board=gcnew array<int,2>(8,8);
 		for(size_t i=0;i<8;i++)
 		{
 			for(size_t j=0;j<8;j++)
@@ -40,18 +40,9 @@ namespace GameCLI
 
 	int Game::CallMove(array<int,2>^% board, int i, int j, int% player)
 	{
-		//????
-		std::vector<std::vector<int>> a;
-		a.resize(8,std::vector<int>(8));
-		for(size_t k=0;k<8;k++)
-			for(size_t l=0;l<8;l++)
-			{
-				a[k][l]=board[k,l];
-			}
-		//????
-		int val=player;
-		int rez=gPtr->move(a, i,j,val);
-		player=val;
+		std::vector<std::vector<int>> a;	
+		pin_ptr<int> ptr=&player;
+		int rez=gPtr->move(a, i,j,*ptr);
 		
 		for(size_t k=0;k<8;k++)
 		{
@@ -61,5 +52,10 @@ namespace GameCLI
 			}
 		}
 		return rez;
+	}
+
+	int Game::CallActivePlayer()
+	{
+		return gPtr->getActivePlayer();
 	}
 }

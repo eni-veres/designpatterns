@@ -46,4 +46,17 @@ namespace Games
 		}
 		return rez;
 	}
+
+	int Game::getActivePlayer()
+	{
+		if(type)
+		{
+			//from GamePP
+		}
+		else
+		{
+			GamePC* g=GamePC::getInstance();
+			return g->getPlayer();
+		}
+	}
 }

@@ -67,16 +67,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ComputerPlayer.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GamePC.cpp" />
     <ClCompile Include="GamePP.cpp" />
+    <ClCompile Include="HumanPlayer.cpp" />
+    <ClCompile Include="ReversiBoard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h" />
+    <ClInclude Include="ComputerPlayer.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GamePC.h" />
     <ClInclude Include="GamePP.h" />
+    <ClInclude Include="HumanPlayer.h" />
     <ClInclude Include="IGame.h" />
+    <ClInclude Include="IGameLevel.h" />
+    <ClInclude Include="IPlayer.h" />
+    <ClInclude Include="ReversiBoard.h" />
+    <ClInclude Include="ReversiState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

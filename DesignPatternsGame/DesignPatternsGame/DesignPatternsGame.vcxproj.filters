@@ -24,6 +24,15 @@
     <ClCompile Include="GamePP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ReversiBoard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h">
@@ -39,6 +48,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GamePP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReversiBoard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReversiState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameLevel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
