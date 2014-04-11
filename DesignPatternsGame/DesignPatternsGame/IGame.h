@@ -1,6 +1,7 @@
 #pragma once
 #include"API.h"
 #include<vector>
+#include"Levels.h"
 
 namespace Games
 {
@@ -14,6 +15,8 @@ namespace Games
 		virtual int getActivePlayer()=0;
 		virtual int getScore(int player)=0;
 		virtual int computerMove()=0;
+		
+		virtual void setComputerLevel(int t)=0;
 	};
 
 	TEST_API IGame* CreateGameClass();

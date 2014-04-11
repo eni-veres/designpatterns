@@ -1,16 +1,22 @@
 #pragma once
-#include"IPlayer.h"
+#include"ReversiBoard.h"
+#include"IMoveStrategy.h"
+#include"Levels.h"
+#include"Easy.h"
+#include"Medium.h"
+#include"Difficult.h"
 
-namespace Player
+namespace Games
 {
-	class ComputerPlayer //: public IPlayer
+	class ComputerPlayer
 	{
+		IMoveStrategy* strategy;
 		int negamax(int player, int depth);
 		int negamax_aux(int player, int depth, int alpha, int beta);
 	public:
 		ComputerPlayer(void);
+		void setLevel(int s);
 		bool move();
 		~ComputerPlayer(void);
 	};
-
 }

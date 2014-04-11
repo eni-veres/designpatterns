@@ -18,6 +18,7 @@ namespace Games
 		virtual int getActivePlayer();
 		virtual int getScore(int player);
 		virtual int computerMove();
+		virtual void setComputerLevel(int t);
 	};
 }
 

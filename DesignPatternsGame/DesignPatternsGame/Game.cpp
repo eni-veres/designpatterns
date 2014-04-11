@@ -83,4 +83,14 @@ namespace Games
 		else
 			throw std::exception("Single player mode!");
 	}
+
+	void Game::setComputerLevel(int t)
+	{
+		if(!type)
+		{
+			GamePC::getInstance()->setComputerLevel(t);
+		}
+		else
+			throw std::exception("Single player mode!");
+	}
 }

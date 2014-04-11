@@ -151,6 +151,7 @@ namespace GameGUI
                     {
                         g.CallMove(ref a, i, j);
                         changeButtons();
+                        g.CallComputerMove();
                     }
                 }
 
@@ -195,6 +196,7 @@ namespace GameGUI
             if (((Button)apasat).Name == "1")
             {
                 g.CallInit(ref a, false);
+                g.CallSetComputerLevel(0);
                 IncarcareButoane();
                 //WhoBegins();
             }

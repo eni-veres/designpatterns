@@ -6,18 +6,19 @@
 #include"ComputerPlayer.h"
 
 #include"windows.h"
-//clasa Singleton
+
 class GamePC
 {
 	static GamePC* instance;
 	ReversiBoard* b;
 	int currentplayer;
 	int win;
-	Player::ComputerPlayer cplayer;
-	Player::HumanPlayer hplayer;
+	Games::ComputerPlayer cplayer;
+	HumanPlayer hplayer;
 	GamePC(void);
 	bool IsGameOver();
 	void SwitchTurn();
+
 public:
 	static GamePC* getInstance();
 	void init(std::vector<std::vector<int>>& board);
@@ -26,6 +27,7 @@ public:
 	int GetWinner();
 	int computerMove();
 	int getScore(int player);
+	void setComputerLevel(int t);
 	~GamePC(void);
 };
 

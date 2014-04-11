@@ -52,6 +52,11 @@ int GamePC::getScore(int player)
 	return b->GetScore(player);
 }
 
+void GamePC::setComputerLevel(int t)
+{
+	cplayer.setLevel(t);
+}
+
 int GamePC::getPlayer()
 {
 	return currentplayer;
