@@ -15,7 +15,7 @@ namespace GameCLI
 		int CallMove(array<int,2>^% board, int i, int j);
 		int CallActivePlayer();
 		int CallGetScore(int player);
-		int CallComputerMove();
+		int CallComputerMove(array<int,2>^% board);
 		void CallSetComputerLevel(int t);
 	};
 }

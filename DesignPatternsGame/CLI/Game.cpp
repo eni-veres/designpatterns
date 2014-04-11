@@ -62,9 +62,19 @@ namespace GameCLI
 		return gPtr->getScore(player);
 	}
 
-	int Game::CallComputerMove()
+	int Game::CallComputerMove(array<int,2>^% board)
 	{
-		return gPtr->computerMove();
+		std::vector<std::vector<int>> a;	
+		int rez= gPtr->computerMove(a);
+
+		for(size_t k=0;k<8;k++)
+		{
+			for(size_t l=0;l<8;l++)
+			{
+				board[k,l]=a[k][l];
+			}
+		}
+		return rez;
 	}
 
 	void Game::CallSetComputerLevel(int t)

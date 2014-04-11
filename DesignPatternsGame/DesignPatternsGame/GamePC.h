@@ -25,7 +25,7 @@ public:
 	int move(std::vector<std::vector<int>>& board, int i, int j);
 	int getPlayer();
 	int GetWinner();
-	int computerMove();
+	int computerMove(std::vector<std::vector<int>>& board);
 	int getScore(int player);
 	void setComputerLevel(int t);
 	~GamePC(void);

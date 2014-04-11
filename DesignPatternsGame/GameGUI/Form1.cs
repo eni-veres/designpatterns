@@ -151,7 +151,7 @@ namespace GameGUI
                     {
                         g.CallMove(ref a, i, j);
                         changeButtons();
-                        g.CallComputerMove();
+                        g.CallComputerMove(ref a);
                     }
                 }
 

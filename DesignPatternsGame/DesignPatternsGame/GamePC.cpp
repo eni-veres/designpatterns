@@ -16,33 +16,36 @@ GamePC* GamePC::getInstance()
 }
 
 
-void GamePC::init(std::vector<std::vector<int>>& board)//, int stplayer)
+void GamePC::init(std::vector<std::vector<int>>& board)
 {
 	board=b->GetBoardState();
 	currentplayer=WHITE;
 }
 
 
-int GamePC::move(std::vector<std::vector<int>>& board, int i, int j)//, int& player)
+int GamePC::move(std::vector<std::vector<int>>& board, int i, int j)
 {
 	//hplayer
 	if(hplayer.move(i,j))
 	{
 		SwitchTurn();
-		board=b->GetBoardState();
 	}
 	else
 	{
 		MessageBox(0,"Not valid move. Try again.","Error",0);
 	}
 
+	board=b->GetBoardState();
+
 	return win;
 }
 
-int GamePC::computerMove()
+int GamePC::computerMove(std::vector<std::vector<int>>& board)
 {
 	cplayer.move();
 	SwitchTurn();
+
+	board=b->GetBoardState();
 
 	return win;
 }

@@ -31,7 +31,7 @@ namespace Games
 		}
 	}
 
-	int Game::move(std::vector<std::vector<int>>& board, int i, int j)//, int& player)
+	int Game::move(std::vector<std::vector<int>>& board, int i, int j)
 	{
 		int rez=-1;
 		if(type)
@@ -41,8 +41,7 @@ namespace Games
 		else
 		{
 			///call move from GamePC
-			GamePC* g=GamePC::getInstance();
-			rez=g->move(board,i,j);//,player);
+			rez=GamePC::getInstance()->move(board,i,j);
 		}
 		return rez;
 	}
@@ -68,17 +67,15 @@ namespace Games
 		}
 		else
 		{
-			GamePC* g=GamePC::getInstance();
-			return g->getScore(player);
+			return GamePC::getInstance()->getScore(player);
 		}
 	}
 	
-	int Game::computerMove()
+	int Game::computerMove(std::vector<std::vector<int>>& board)
 	{
 		if(!type)
 		{
-			GamePC* g=GamePC::getInstance();
-			return g->computerMove();
+			return GamePC::getInstance()->computerMove(board);
 		}
 		else
 			throw std::exception("Single player mode!");

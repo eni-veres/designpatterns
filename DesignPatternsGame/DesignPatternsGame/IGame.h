@@ -14,7 +14,7 @@ namespace Games
 		virtual int move(std::vector<std::vector<int>>& board, int i, int j)=0;//, int& player)=0;
 		virtual int getActivePlayer()=0;
 		virtual int getScore(int player)=0;
-		virtual int computerMove()=0;
+		virtual int computerMove(std::vector<std::vector<int>>& board)=0;
 		
 		virtual void setComputerLevel(int t)=0;
 	};
