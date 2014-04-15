@@ -17,10 +17,10 @@ GamePP* GamePP::getInstance()
 }
 
 
-void GamePP::init(std::vector<std::vector<int>>& board, int stplayer)
+void GamePP::init(std::vector<std::vector<int>>& board)
 {
 	board=b->GetBoardState();
-	currentplayer=stplayer;
+	currentplayer=WHITE;
 }
 
 

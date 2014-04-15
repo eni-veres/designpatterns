@@ -16,18 +16,18 @@ namespace Games
 		delete gPtr;
 	}
 
-	void Game::init(std::vector<std::vector<int>>& board, bool gametype)//, int stplayer) 
+	void Game::init(std::vector<std::vector<int>>& board, bool gametype)
 	{
 		type=gametype;
 		if(type)
 		{
 			//call init method from GamePP
+			GamePP::getInstance()->init(board);
 		}
 		else
 		{
 			//call init method from GamePC
-			GamePC* g=GamePC::getInstance();
-			g->init(board);//,stplayer);
+			GamePC::getInstance()->init(board);
 		}
 	}
 
@@ -37,6 +37,7 @@ namespace Games
 		if(type)
 		{
 			//call move from GamePP
+			rez=GamePP::getInstance()->move(board,i,j);
 		}
 		else
 		{
@@ -50,7 +51,8 @@ namespace Games
 	{
 		if(type)
 		{
-			//from GamePP
+			GamePP* g=GamePP::getInstance();
+			return g->getPlayer();
 		}
 		else
 		{
@@ -63,7 +65,7 @@ namespace Games
 	{
 		if(type)
 		{
-			//from GamePP
+			GamePP::getInstance()->getScore(player);
 		}
 		else
 		{

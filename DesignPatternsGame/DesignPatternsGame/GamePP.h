@@ -1,4 +1,3 @@
-
 #pragma once
 #include<vector>
 #include"ReversiBoard.h"
@@ -11,20 +10,18 @@ class GamePP
 {
 	static GamePP* instance;
 	//clasa Singleton
-	
+
 	ReversiBoard* b;
 	int currentplayer;
 	int win;
 	HumanPlayer player1;
 	HumanPlayer player2;
-	//int pl;
 	GamePP(void);
 	bool IsGameOver();
 	void SwitchTurn();
-
 public:
 	static GamePP* getInstance();
-	void init(std::vector<std::vector<int>>& board, int stplayer);
+	void init(std::vector<std::vector<int>>& board);//, int stplayer);
 	int move(std::vector<std::vector<int>>& board, int i, int j);
 	int getPlayer();
 	int GetWinner();
